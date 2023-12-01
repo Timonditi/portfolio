@@ -1,47 +1,156 @@
-.homepage {
-    background-color: #f5f5f5;
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
+h1{
+    font-weight: bold;
+}
+
+span,
+a {
+    color: #A0522D;
+    word-spacing: 3px;
+}
+
+.btn{
+    color: #A0522D;
+}
+
+.middle {
     text-align: center;
-    padding: 100px 0;
+}
+
+
+.homepage {
+    background-image: url('images/homepage.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 90vh;
+
+}
+footer {
+    background: #191919;
+}
+.ico i{
+    color: #A0522D;
+}
+.ico a{
+    color: black;
+    font-size: 26px;
+}
+/**
+   * Circle Styles
+   */
+
+.circle {
+    position: relative;
+    display: block;
+    margin: 2em 0;
+    background-color: transparent;
+    color: #222;
+    text-align: center;
+    height: 150px;
+    width: 150px;
+}
+
+.circle:after {
+    display: block;
+    padding-bottom: 100%;
+    width: 100%;
+    height: 0;
+    border-radius: 50%;
+    background-color: #ddd;
+    content: "";
+}
+
+.circle__inner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.circle__wrapper {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.circle__content {
+    display: table-cell;
+    padding: 1em;
+    vertical-align: middle;
+    color: #A0522D;
+
+}
+
+@media (min-width: 480px) {
+    .circle__content {
+        font-size: 2em;
+    }
+}
+
+@media (min-width: 768px) {
+    .circle__content {
+        font-size: 1em;
+    }
+}
+
+h6 {
+    color: #A0522D;
 }
 
 .centered {
-    color: #333;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
 }
 
-.centered h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
+/* Project */
+
+.flip-card {
+    background-color: #A0522D;
+    width: 350px;
+    height: 350px;
+    perspective: 1000px;
 }
 
-.centered h3 {
-    font-size: 24px;
-    margin-bottom: 30px;
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.btn-outline-info {
-    color: #17a2b8;
-    border-color: #17a2b8;
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
 }
 
-.btn-outline-info:hover {
-    background-color: #17a2b8;
-    color: #fff;
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
-#about {
-    background-color: #fff;
-    padding: 60px 0;
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
 }
 
-#about h1 {
-    font-size: 36px;
-    margin-left: 30px;
+.flip-card-back {
+    background-color: white;
+    color: black;
+    transform: rotateY(180deg);
 }
-
-.more {
-    font-size: 18px;
-}
-
-.more p {
-    margin-bottom: 20px;
-}
+/* End of flip cards */
