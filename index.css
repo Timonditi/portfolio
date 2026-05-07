@@ -121,16 +121,16 @@ h1, h2, h3, h4, h5, h6 {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    height: 92vh;
+    height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.28) 100%);
+    background: rgba(0, 0, 0, 0.40);
 }
 
 .hero-content {
@@ -138,6 +138,7 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 1;
     padding: 0 60px;
     max-width: 720px;
+    text-align: center;
 }
 
 .hero-tag {
@@ -783,7 +784,6 @@ footer {
 
     .cursor-blink { animation: none !important; opacity: 1; }
     #scrollProgress { animation: none !important; }
-    .homepage { background-attachment: scroll; }
 }
 
 /* ============================================================
