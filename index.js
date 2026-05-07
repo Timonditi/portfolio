@@ -151,29 +151,11 @@ const statsSection = document.querySelector('.stats-section');
 if (statsSection) statsObserver.observe(statsSection);
 
 /* ============================================================
-   FLIP CARDS — Mobile tap toggle + keyboard Enter/Space
+   FLIP CARDS — Keyboard Enter/Space support
    ============================================================ */
 
 const flipCards = document.querySelectorAll('.flip-card');
 
-// Touch device detection — disable CSS hover, enable tap
-if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-    document.documentElement.classList.add('touch-device');
-
-    flipCards.forEach((card) => {
-        card.addEventListener('click', (e) => {
-            // Don't toggle if user tapped a link inside the back face
-            if (e.target.closest('a')) return;
-            // Close siblings
-            flipCards.forEach((other) => {
-                if (other !== card) other.classList.remove('flipped');
-            });
-            card.classList.toggle('flipped');
-        });
-    });
-}
-
-// Keyboard: Enter or Space flips the card
 flipCards.forEach((card) => {
     card.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
